@@ -4,91 +4,97 @@
 
 This project implements an end-to-end Intelligent Registration System with strong client-side validations and complete UI automation testing.
 
-The objective of the project is to:
-- Build a responsive registration form using HTML, CSS, and JavaScript.
-- Implement robust client-side validations for mandatory fields and business rules.
-- Automate the complete registration workflow using Java and Selenium WebDriver.
-- Validate negative, positive, and dynamic form logic scenarios through automation.
+The main objectives of this project are:
+- To build a responsive and user-friendly registration form using HTML, CSS, and JavaScript.
+- To implement robust client-side validations for mandatory fields and business rules.
+- To automate the complete registration workflow using Java and Selenium WebDriver.
+- To validate negative, positive, and dynamic form logic scenarios through UI automation.
 
-This project was developed as part of the Frugal Testing Software Engineer assignment.
+This project was developed as part of the Frugal Testing – Software Engineer assignment.
 
 ---
 
 ## Technologies Used
 
-Frontend:
-- HTML5
-- CSS3
-- JavaScript
+### Frontend
+- HTML5  
+- CSS3  
+- JavaScript  
 
-Automation:
-- Java
-- Selenium WebDriver
-- TestNG
-- Maven
+### Automation
+- Java  
+- Selenium WebDriver  
+- TestNG  
+- Maven  
 
-Tools:
-- Google Chrome
-- ChromeDriver
+### Tools
+- Google Chrome  
+- ChromeDriver  
 
 ---
 
 ## Project Structure
 
-registration/
-├── index.html
-├── style.css
-└── script.js
-
-automation/
-├── pom.xml
-└── src/test/java/.../RegistrationTest.java
-
-screenshots/
-├── form-loaded.png
-├── validation-error.png
-├── error-state.png
-└── success-state.png
+Frugal-Assignment/
+├── registration/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+│
+├── automation/
+│ ├── pom.xml
+│ └── src/test/java/com/company/registration/RegistrationTest.java
+│
+├── screenshots/
+│ ├── form-loaded.png
+│ ├── validation-error.png
+│ ├── error-state.png
+│ └── success-state.png
+│
+├── Report.docx
+└── README.md
 
 
 ---
 
 ## Test Scenarios Covered
 
-The following automation flows are implemented:
+The following automation flows are implemented in this project:
 
 ### Flow A – Negative Scenario
 - Launch the registration page.
-- Fill all required fields except Last Name.
+- Fill all required fields except **Last Name**.
 - Submit the form.
-- Verify error message for missing Last Name.
-- Verify field highlight.
+- Verify the error message for missing Last Name.
+- Verify that the Last Name field is highlighted in red.
 - Capture screenshot: `error-state.png`.
 
 ### Flow B – Positive Scenario
-- Fill all fields with valid data.
-- Match Password and Confirm Password.
-- Check Terms & Conditions.
+- Fill all fields with valid input data.
+- Ensure Password and Confirm Password match.
+- Check the Terms & Conditions checkbox.
 - Submit the form.
-- Verify success message.
-- Verify form reset.
+- Verify that the success message appears.
+- Verify that all form fields are reset after submission.
 - Capture screenshot: `success-state.png`.
 
 ### Flow C – Form Logic Validation
-- Verify Country → State dynamic update.
-- Verify State → City dynamic update.
-- Verify password strength validation.
-- Verify confirm password mismatch handling.
-- Verify submit button remains disabled until form is valid.
+- Verify that changing Country updates the State dropdown dynamically.
+- Verify that changing State updates the City dropdown dynamically.
+- Verify password strength meter behavior (Weak / Medium / Strong).
+- Verify confirm password mismatch validation.
+- Verify that the Submit button remains disabled until the form becomes valid.
 
 ---
 
 ## Prerequisites
 
-- Java 11 or above
-- Maven
-- Google Chrome browser
-- ChromeDriver available in system PATH
+Before running this project, ensure the following are installed:
+
+- Java 11 or above  
+- Maven  
+- Google Chrome browser  
+- ChromeDriver available in system PATH and compatible with your Chrome version  
 
 ---
 
@@ -98,7 +104,7 @@ The following automation flows are implemented:
 2. Open `index.html` using Live Server or any local web server.
 3. Ensure the application is accessible at:
 
-   http://localhost:5500/registration/index.html
+http://localhost:5500/registration/index.html
 
 ---
 
@@ -106,45 +112,48 @@ The following automation flows are implemented:
 
 1. Open a terminal in the `automation` folder.
 2. Run the following command:
+ mvn test
 
-   mvn clean test
-
-3. The following will happen:
-   - Chrome browser will launch automatically.
-   - Automation Flow A, B, and C will execute.
-   - Test results will be printed in the console.
+3. During execution:
+- Chrome browser will launch automatically.
+- Automation Flow A, Flow B, and Flow C will execute sequentially.
+- Test execution logs will be printed in the console.
 
 4. After execution:
-   - Screenshots will be available in the `screenshots` folder.
-   - Detailed test reports will be available in:
+- Screenshots will be available in the `screenshots` folder.
+- Detailed test reports will be available in:
+automation/target/surefire-reports
 
-     automation/target/surefire-reports
+
 
 ---
 
 ## Execution Evidence
 
-- Automation execution video is available at:
-  https://drive.google.com/file/d/1AKAzoSv-d5hKOVJGRG5JwJPYpiHteEzD/view?usp=sharing
+Automation execution video is available at the following link:
 
-- Screenshots included:
-  - form-loaded.png
-  - validation-error.png
-  - error-state.png
-  - success-state.png
+https://drive.google.com/file/d/1AKAzoSv-d5hKOVJGRG5JwJPYpiHteEzD/view?usp=sharing  
+
+The following screenshots are included in the repository:
+
+- `form-loaded.png` – Initial form state after page load  
+- `validation-error.png` – Manual validation error state  
+- `error-state.png` – Negative automation scenario  
+- `success-state.png` – Successful form submission state  
 
 ---
 
 ## Notes
 
-- Do not rename input field IDs, as automation depends on them.
-- Do not commit the `target/` folder to the repository.
-- Ensure ChromeDriver version is compatible with your Chrome browser.
+- Input field IDs must not be changed, as automation scripts depend on them.
+- The `target/` folder generated by Maven should not be committed to the repository.
+- Ensure ChromeDriver version is compatible with your installed Chrome browser.
 
 ---
 
 ## Author
 
-Dharmendra Vishvkarma
-College - Ajay Kumar Garg Engineering College Ghaziabad
-Roll Number - 2300270139006
+Dharmendra Vishvkarma  
+Ajay Kumar Garg Engineering College, Ghaziabad  
+Roll Number: 2300270139006  
+
